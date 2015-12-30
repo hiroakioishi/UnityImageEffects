@@ -6,9 +6,13 @@ Post Processing Effects for Unity
 ・Anaglyph
 
 ・BrokenPixelsort2
+
 ・CMYKHalftone
+
 ・CartoonVideo
+
 ・CelShaderish
+
 ・CircularDupulication
 ・CubicLensDistortion
 ・EMInterference
