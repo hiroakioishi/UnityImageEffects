@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d81e067618e894e5d8c6aa1099142d17
+timeCreated: 1451470855
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - _shader: {fileID: 4800000, guid: d8a7cd89929324b17867a437d9bdc125, type: 3}
+  - _ditheringTex: {fileID: 2800000, guid: 42ee75564a81c4fca9e4f6ecda0528bc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,47 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ImageEffects/Shaders/SmokeBlur.shader">
+    <Files>
+      <File FileName="Assets/ImageEffects/Scripts/Anaglyph.cs" Line="14" Column="25" />
+      <File FileName="Assets/ImageEffects/Scripts/CartoonVideo.cs" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Scripts/CelShaderish.cs" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Scripts/GIFify.cs" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Scripts/HorizontalBlur.cs" Line="1" Column="1" />
+      <File FileName="Assets/Sample/Scripts/CameraRectAdjuster.cs" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Scripts/RGBDisplay.cs" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Scripts/Knitted.cs" Line="21" Column="49" />
+      <File FileName="Assets/ImageEffects/Shaders/Anaglyph.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/BrokenPixelsort2.shader" Line="2" Column="31" />
+      <File FileName="Assets/ImageEffects/Shaders/CelShaderish.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/CircularDupulication.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/CMYKHalftone.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/CubicLensDistortion.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/EdgeFilter.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/EMInterference.shader" Line="2" Column="31" />
+      <File FileName="Assets/ImageEffects/Shaders/EvilRay.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/GIFify.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/GodRay.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/HeartBlend.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/HorizontalBlur.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/InverseColor.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/JuliaFreak.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/Knitted.shader" Line="20" Column="2" />
+      <File FileName="Assets/ImageEffects/Shaders/MicroprismMosaic.shader" Line="2" Column="25" />
+      <File FileName="Assets/ImageEffects/Shaders/Miller.shader" Line="6" Column="11" />
+      <File FileName="Assets/ImageEffects/Shaders/MoneyFilter.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/MrsScary.shader" Line="2" Column="16" />
+      <File FileName="Assets/ImageEffects/Shaders/NoiseFilter.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/PaletteQuantizationAndDithering.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/Pixelate.shader" Line="2" Column="25" />
+      <File FileName="Assets/ImageEffects/Shaders/RGBDisplay.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/ZoomOut.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/TrianglePostProcessing.shader" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/snoise.cginc" Line="1" Column="1" />
+      <File FileName="Assets/ImageEffects/Shaders/SmokeBlur.shader" Line="19" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
