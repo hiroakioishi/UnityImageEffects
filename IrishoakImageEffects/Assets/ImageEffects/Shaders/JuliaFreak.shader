@@ -1,8 +1,7 @@
 ﻿
 // This is port of below code.
-// [Shadertoy] Kuwahara
-// https://www.shadertoy.com/view/lls3WM
-// Uploaded by Bjartr in 2015-Jan-30
+// [Shadertoy] JuliaFreak
+// https://www.shadertoy.com/view/XdXXzX
 
 Shader "Hidden/irishoak/ImageEffects/JuliaFreak" {
 	Properties {
