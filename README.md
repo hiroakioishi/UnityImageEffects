@@ -86,5 +86,5 @@ This Unity project is licensed under the Attribution-NonCommercial-ShareAlike 3.
 http://creativecommons.org/licenses/by-nc-sa/3.0/deed.ja
 
 Halftone effect is port of glsl-halftone, which is MIT.  
-Some codes are port of glsl shader demo in Shadertoy. which is licensed by CC BY-NC-SA 3.0.  
+BrokenPixelsort2, CartoonVideo, CelShaderish, CubicLensDistortion, EMInterference, EvilRay, GodRay, GIFify, HeartBlend, JuliaFreak, Knitted, MicroprismMosaic, MoneyFilter, MrsScary, PaletteQuantizationAndDithering, Pixelate, RGBDisplay, TrianglePostProcessing are port of glsl shader demo in Shadertoy. which are licensed by CC BY-NC-SA 3.0.  
 Some codes uses Ashima's glsl-noise, which is MIT.  
