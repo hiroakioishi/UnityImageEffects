@@ -3,16 +3,11 @@ Post Processing Effects for Unity
 
 ![screenShot](https://github.com/hiroakioishi/UnityImageEffects/blob/master/screenShot.png)
 
-・Anaglyph
-
-・BrokenPixelsort2
-
-・CMYKHalftone
-
-・CartoonVideo
-
-・CelShaderish
-
+・Anaglyph  
+・BrokenPixelsort2  
+・CMYKHalftone  
+・CartoonVideo  
+・CelShaderish  
 ・CircularDupulication
 ・CubicLensDistortion
 ・EMInterference
