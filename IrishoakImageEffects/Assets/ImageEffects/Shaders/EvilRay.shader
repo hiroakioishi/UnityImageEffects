@@ -19,15 +19,16 @@ Shader "Hidden/irishoak/ImageEffects/EvilRay" {
 	
 	fixed4 frag (v2f_img i) : SV_Target
 	{
-		float3 p = float3(i.uv.xy - 0.5, 0.0);
+		float3 p = float3(i.uv.xy - float2(0.5, 0.5), 0.0);
 		//p.xy *= 0.98;
 		float3 o = tex2D(_MainTex, 0.5 + p.xy).rbb;
-		for (float i = 0.0; i < 50.0; i++) {
-			p.xy *= 0.98;
-			float3 col = tex2D(_MainTex, 0.5 + p.xy);
-			p.z += pow(max(0.0, 0.5 - length(col.rg)), 2.0) * exp(-i * 0.1);
+		for (float k = 0.0; k < 50.0; k++) {
+			p.x = p.x * 0.98;
+			p.y = p.y * 0.98;
+			float3 col = tex2D(_MainTex, float2(0.5, 0.5) + p.xy).xyz;
+			p.z += pow(max(0.0, 0.5 - length(col.rg)), 2.0) * exp(-k * 0.1);
 		}
-		return lerp(tex2D(_MainTex, i.uv), float4(o * o + p.z, 1.0), _Value);
+		return lerp(tex2D(_MainTex, i.uv.xy), float4(o * o + float3(p.z, 0, 0), 1.0), _Value);
 	}
 	
 	ENDCG

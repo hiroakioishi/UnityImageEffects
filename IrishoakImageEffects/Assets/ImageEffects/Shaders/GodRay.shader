@@ -22,10 +22,10 @@ Shader "Hidden/irishoak/ImageEffects/GodRay" {
 		float3 p = float3(i.uv.xy - 0.5, 0.0);
 		//p.xy *= 0.98;
 		float3 o = tex2D(_MainTex, 0.5 + p.xy).rgb;
-		for (float i = 0.0; i < 50.0; i++) {
+		for (float k = 0.0; k < 50.0; k++) {
 			p.xy *= 0.98;
-			float3 col = tex2D(_MainTex, 0.5 + p.xy);
-			p.z += pow(max(0.0, 0.5 - length(col.rgb)), 2.0) * exp(-i * 0.1);
+			float3 col = tex2D(_MainTex, float2(0.5, 0.5) + p.xy);
+			p.z += pow(max(0.0, 0.5 - length(col.rgb)), 2.0) * exp(-k * 0.1);
 		}
 		return lerp(tex2D(_MainTex, i.uv), float4(o * o + p.z, 1.0), _Value);
 	}

@@ -30,8 +30,8 @@ Shader "Hidden/irishoak/ImageEffects/CMYKHalftone" {
 		float n = 0.1 * snoise(st*200.0); // Fractal noise
 		n += 0.05  * snoise(st*400.0);
 		n += 0.025 * snoise(st*800.0);
-		float3 white = float3(n*0.2 + 0.97);
-		float3 black = float3(n + 0.1);
+		float3 white = float3(n*0.2 + 0.97, n*0.2 + 0.97, n*0.2 + 0.97);
+		float3 black = float3(n + 0.1, n + 0.1, n + 0.1);
 
 		// Perform a rough RGB-to-CMYK conversion
 		float4 cmyk;
@@ -68,7 +68,7 @@ Shader "Hidden/irishoak/ImageEffects/CMYKHalftone" {
 
 		//aspect corrected texture coordinates
 		float2 st = i.uv;
-		st.x *= _ScreenResolution.x / _ScreenResolution.y;
+		st.x *= (_ScreenResolution.x / _ScreenResolution.y);
 
 		//apply halftone effect
 		return fixed4(lerp(tex2D(_MainTex, i.uv).xyz, halftone(texcolor.rgb, st * _DotSize), _Value), 1.0);

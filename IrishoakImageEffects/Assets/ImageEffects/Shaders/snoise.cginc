@@ -67,9 +67,9 @@ float4 grad4(float j, float4 ip)
 	const float4 ones = float4(1.0, 1.0, 1.0, -1.0);
 	float4 p,s;
 
-	p.xyz = floor(frac (float3(j) * ip.xyz) * 7.0) * ip.z - 1.0;
+	p.xyz = floor(frac (float3(j,j,j) * ip.xyz) * 7.0) * ip.z - 1.0;
 	p.w = 1.5 - dot(abs(p.xyz), ones.xyz);
-	s = float4(lessThan(p, float4(0.0)));
+	s = float4(lessThan(p, float4(0.0,0.0,0.0,0.0)));
 	p.xyz = p.xyz + (s.xyz*2.0 - 1.0) * s.www; 
 
 	return p;
@@ -183,7 +183,7 @@ float snoise(float3 v)
 	//vec4 s1 = vec4(lessThan(b1,0.0))*2.0 - 1.0;
 	float4 s0 = floor(b0)*2.0 + 1.0;
 	float4 s1 = floor(b1)*2.0 + 1.0;
-	float4 sh = -step(h, float4(0.0));
+	float4 sh = -step(h, float4(0.0,0.0,0.0,0.0));
 
 	float4 a0 = b0.xzyw + s0.xzyw * sh.xxyy ;
 	float4 a1 = b1.xzyw + s1.xzyw * sh.zzww ;
@@ -216,7 +216,7 @@ float snoise(float4 v)
                    -0.447213595499958); // -1 + 4 * G4
 
 	// First corner
-	float4 i  = floor(v + dot(v, float4(F4)) );
+	float4 i  = floor(v + dot(v, float4(F4,F4,F4,F4)) );
 	float4 x0 = v -   i + dot(i, C.xxxx);
 
 	// Other corners

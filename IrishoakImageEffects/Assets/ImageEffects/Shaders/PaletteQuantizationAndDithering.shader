@@ -24,8 +24,8 @@ Shader "Hidden/irishoak/ImageEffects/PaletteQuantizationAndDithering" {
 	//const float ResolutionDivisor = 1.;// 1 pixel = 1 pixel, the finest visible.
 
 
-	const float PaletteRGBSize    = 8.0;// number of values possible for each R, G, B.
-	const float ResolutionDivisor = 2.0;
+	static const float PaletteRGBSize    = 8.0;// number of values possible for each R, G, B.
+	static const float ResolutionDivisor = 2.0;
 
 	//#define USE_BAYER4x4
 	#define USE_BAYER8x8
@@ -95,7 +95,7 @@ Shader "Hidden/irishoak/ImageEffects/PaletteQuantizationAndDithering" {
 		float2 fragCoord = i.uv.xy * _ScreenResolution;
     
 	    // space between values of the dest palette
-	    float3 quantizationPeriod = float3(1./(PaletteRGBSize-1.));
+	    float3 quantizationPeriod = float3(1.0/(PaletteRGBSize-1.0), 1.0/(PaletteRGBSize-1.0), 1.0/(PaletteRGBSize-1.0));
 	    
 		float2 uvPixellated = floor(fragCoord / ResolutionDivisor) * ResolutionDivisor;
 	    

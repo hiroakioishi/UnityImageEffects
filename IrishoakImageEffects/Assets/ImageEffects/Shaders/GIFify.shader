@@ -11,6 +11,8 @@ Shader "Hidden/irishoak/ImageEffects/GIFify" {
 	CGINCLUDE
 	
 	#include "UnityCG.cginc"
+
+	#define STRENGTH 0.5
 	
 	uniform sampler2D _MainTex;
 	float4 _MainTex_TexelSize;
@@ -19,14 +21,14 @@ Shader "Hidden/irishoak/ImageEffects/GIFify" {
 	
 	uniform float2 _ScreenResolution;
 	
-	const float strength   = 0.5;
-	const float gamma      = 0.6;
-	const float brightness = 1.4;
+	static const float strength   = 0.5;
+	static const float gamma      = 0.6;
+	static const float brightness = 1.4;
 	
-	const float orig = 1.0 - strength;
+	float orig = 0.5; // 1.0 - sctrength
 
 	float luma(float4 rgba) {
-		const float3 W = float3(0.2125, 0.7154, 0.0721);
+		float3 W = float3(0.2125, 0.7154, 0.0721);
 		return dot(rgba.xyz, W);
 	}
 

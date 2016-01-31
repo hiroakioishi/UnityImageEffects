@@ -37,7 +37,7 @@ Shader "Hidden/irishoak/ImageEffects/BrokenPixelsort2" {
 	}
 
 	float3 gray3(float3 c){
-	    return float3(gray(c));
+	    return float3(gray(c), gray(c), gray(c));
 	}
 
 	float bm_diff(float color_top, float color_bottom){
@@ -98,7 +98,7 @@ Shader "Hidden/irishoak/ImageEffects/BrokenPixelsort2" {
 	    if (b)
 	       // return (cv(c1) > cv(c2)) ? c2:  bm_max(c1, float3(hash(c1.x)));
 		   // return (cv(c1) > cv(c2)) ? c2:   float3( bm_diff(hash(c1.x), c1.x) );
-		    return (cv(c1) > cv(c2)) ? c2:   float3( hash(c1.x) );
+		    return (cv(c1) > cv(c2)) ? c2:   float3(hash(c1.x), hash(c1.x), hash(c1.x));
 		else 
 	        return (cv(c1) > cv(c2)) ? c1: c2;
 	}
@@ -160,7 +160,7 @@ Shader "Hidden/irishoak/ImageEffects/BrokenPixelsort2" {
 	    if (b)
 		   // return (cv(c1) > cv(c2)) ? c2:  bm_max(c1, float3(hash(c1.x)));
 		   // return (cv(c1) > cv(c2)) ? c2:   float3( bm_diff(hash(c1.x), c1.x) );
-		    return (cv(c1) > cv(c2)) ? c2:   float3( hash(cv(c1)) ); //hash(cv(c1)) gray(c1)
+		    return (cv(c1) > cv(c2)) ? c2:   float3(hash(cv(c1)), hash(cv(c1)), hash(cv(c1))); //hash(cv(c1)) gray(c1)
 		else 
 	        return (cv(c1) > cv(c2)) ? c1: c2;
 	}

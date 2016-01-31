@@ -17,6 +17,8 @@ namespace irishoak.ImageEffects {
 				_cellSize = value;
 			}
 		}
+		[SerializeField]
+		bool flipY = true;
 		#endregion
 
 		Material _m;
@@ -32,6 +34,11 @@ namespace irishoak.ImageEffects {
 			_m.SetVector ("_ScreenResolution", new Vector2 (Screen.width, Screen.height));
 			_m.SetFloat  ("_ScreenAspectRatio", Screen.width * 1.0f / Screen.height * 1.0f);
 
+			if (flipY) {
+				_m.EnableKeyword ("FLIP_Y");
+			} else {
+				_m.DisableKeyword ("FLIP_Y");
+			}
 			Graphics.Blit (source, destination, _m);
 		}
 

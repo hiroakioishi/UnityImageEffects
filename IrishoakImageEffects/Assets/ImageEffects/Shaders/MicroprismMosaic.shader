@@ -22,12 +22,12 @@ Shader "Hidden/irishoak/ImageEffects/MicroprismMosaic" {
 	uniform float  _Value;
 	uniform float  _CellSize;
 	
-	const float minCells     = 1.;
-	const float maxCells     = 50.;
-	const float defaultCells = 12.;
-	const float aberration   = 1.05;
+	static const float minCells     = 1.;
+	static const float maxCells     = 50.;
+	static const float defaultCells = 12.;
+	static const float aberration   = 1.05;
 
-	const float triAspect = 0.866; //sqrt(3.)/ 2.;
+	static const float triAspect = 0.866; //sqrt(3.)/ 2.;
 	
 	
 	float hitTest(float2 uv, float2 cellSize) {
@@ -96,7 +96,9 @@ Shader "Hidden/irishoak/ImageEffects/MicroprismMosaic" {
 
 //		float2 uv = fixUV(fragCoord.xy / iResolution.xy);
 		float2 uv = fixUV(i.uv.xy);
-		
+#ifdef FLIP_Y
+		uv.y = (1.0 - uv.y);
+#endif
 		// find whether co-ord in 'odd' or 'even' cell
 		//float score = hitTest(uv - 0.5, cellSize);
 		float score = hitTest(uv, cellSize);
@@ -113,7 +115,7 @@ Shader "Hidden/irishoak/ImageEffects/MicroprismMosaic" {
 
 		// vary brightness based on offset, distance from top of cell
 		float bright = (0.04 + (0.04 * length(offset) / 0.5)) * (1.0 - (0.7 * frac((uv.y - 0.5) / cellSize.y)));
-		fixed4 fragColor = lerp(txColor, lerp(pow(txColor, float4(2.0)), float4(1.0) - pow(float4(1.0) - txColor, float4(2.0)), oddEven), float4(bright, bright, bright, bright));
+		fixed4 fragColor = lerp(txColor, lerp(pow(txColor, float4(2.0, 2.0, 2.0, 2.0)), float4(1.0, 1.0, 1.0, 1.0) - pow(float4(1.0, 1.0, 1.0, 1.0) - txColor, float4(2.0, 2.0, 2.0, 2.0)), oddEven), float4(bright, bright, bright, bright));
 
 		// vignetting based on distance from centre of cell, attenuation by cell count
 		float attn = pow(0.97, pow(cellsHigh, 1.3));
@@ -140,6 +142,7 @@ Shader "Hidden/irishoak/ImageEffects/MicroprismMosaic" {
 			#pragma glsl
 			#pragma vertex   vert_img
 			#pragma fragment frag
+			#pragma shader_feature FLIP_Y
 			ENDCG
 		} 
 	}
